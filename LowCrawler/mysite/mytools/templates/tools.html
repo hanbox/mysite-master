@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+    {% block mysite %}
+    {% load staticfiles %}
+
+<section class="tools-tab">
+<ul id="myTab" class="nav nav-tabs">
+   <li class="active">
+      <a href="#site" data-toggle="tab">
+         收藏网站
+      </a>
+   </li>
+   <li><a href="#tools" data-toggle="tab">工具</a></li>
+</ul>
+
+<div id="myTabContent" class="tab-content">
+   <div class="tab-pane fade in active" id="site">
+      <div class="inner">
+
+          {% for post in tools_site %}
+         <div class="item tool-item">
+             <div class="item-inner">
+                 <div class="item-hd">
+                 <a target="_blank" href="{{post.web_url}}" class="item-icon"><span class="{{post.image_paths}}" style="font-size:48px;color:#75B9E6"></span></a>
+                     <h3><a target="_blank" href="{{post.web_url}}">{{post.site_title}}</a></h3>
+
+                     <span class="item-category">[<a target="_blank" rel="nofollow" href="/c/developer">{{post.site_type}}</a>]</span>
+                     <a title="喜欢" class="likeable" href="javascript:;" data-id="35"><i class="icon like"></i></a>
+                 </div>
+                 <div class="item-bd">
+                     <div class="item-desc" title="{{post.site_info}}">{{post.site_info}}</div>
+                 </div>
+                 <div class="item-ft">
+                     <a target="_blank" class="item-link" href="{{post.web_url}}">{{post.web_url}}</a>
+                     <a target="_blank" class="item-btn" href="{{post.web_url}}">进入</a>
+                 </div>
+             </div>
+         </div>
+          {% endfor %}
+
+      </div>
+   </div>
+   <div class="tab-pane fade" id="tools">
+       <section class="tools-form">
+           <div class="sceen">
+               <iframe id="sceen" src="" width="100%" height="100%" scrolling="auto" style="border:1px solid #A5A0A0">
+                </iframe>
+           </div>
+           <h5>选择使用工具</h5>
+           <div class="tools-nav">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a id="sceen-link" href="javascript:void(0);" target="view_window">进入</a></li>
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> 翻译 <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+<!--                        <li><a href="javascript:void(0);" onclick="loadTranslate(0)">谷歌翻译</a></li>-->
+                        <li><a href="javascript:void(0);" onclick="loadTranslate(1)">百度翻译</a></li>
+                        <li><a href="javascript:void(0);" onclick="loadTranslate(2)">有道翻译</a></li>
+                        <li><a href="javascript:void(0);" onclick="loadTranslate(3)">Bing翻译</a></li>
+                    </ul>
+                </li>
+            </ul>
+           </div>
+       </section>
+   </div>
+   </section>
+   {% endblock %}

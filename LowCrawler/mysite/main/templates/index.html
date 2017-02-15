@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+    {% block mysite %}
+    {% load staticfiles %}
+    <link href="{% static "assets/js/style4.css" %}" rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="{% static "fancybox/source/jquery.fancybox.css"%}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static "fancybox/source/jquery.fancybox.js"%}"></script>
+    <link rel="stylesheet" href="{% static "fancybox/source/helpers/jquery.fancybox-thumbs.css"%}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static "fancybox/source/jquery.fancybox.pack.js"%}"></script>
+
+    <style>
+    .cb-slideshow li:nth-child(1) span { background-image: url({% static "assets/images/main.jpg" %});}
+    .cb-slideshow li:nth-child(2) span { background-image: url({% static "assets/images/main.jpg" %});}
+    .cb-slideshow li:nth-child(3) span { background-image: url({% static "assets/images/main.jpg" %});}
+    .cb-slideshow li:nth-child(4) span { background-image: url({% static "assets/images/main.jpg" %});}
+    .cb-slideshow li:nth-child(5) span { background-image: url({% static "assets/images/main.jpg" %});}
+    .cb-slideshow li:nth-child(6) span { background-image: url({% static "assets/images/main.jpg" %});}
+
+    </style>
+
+    <section class="banner">
+        <header id="header">
+            <div class="header-content clearfix">
+                  <nav class="navigation" role="navigation">
+                    <ul class="primary-nav">
+                      <li><a href="#site-info">网站介绍</a></li>
+                      <li><a href="#features">案例分析</a></li>
+                      <li><a href="#gallery">案例截图</a></li>
+                    </ul>
+                      <ul class="member-actions">
+                              <li><a href="../../accounts/signin" class="login">登录</a></li>
+                              <li><a href="../../accounts/signup" class="btn-white btn-small">注册</a></li>
+                      </ul>
+                  </nav>
+                    <a href="#" class="nav-toggle">Menu<span></span></a>
+            </div>
+        </header>
+
+        <div>
+            <ul class="cb-slideshow">
+                <li><span>Image 01</span><div><h3>FOROUR</h3></div></li>
+                <li><span>Image 02</span><div><h3>FOROUR</h3></div></li>
+                <li><span>Image 03</span><div><h3>FOROUR</h3></div></li>
+                <li><span>Image 04</span><div><h3>FOROUR</h3></div></li>
+                <li><span>Image 05</span><div><h3>FOROUR</h3></div></li>
+                <li><span>Image 06</span><div><h3>FOROUR</h3></div></li>
+            </ul>
+        </div>
+
+        <div class="container">
+              <section class="main-strip">
+                    <div style="color:#FFF;"><h1>可点击进入链接网站</h1></div>
+                    <div class="logo-placeholder  divcss5-def" style="top: 30%;left: 20%;">
+                        <img src="{% static "assets/images/1.png" %}" alt="蓝莓" usemap="#newbook1">
+                        <map name="newbook1">
+                            <area shape="rect" coords="0,0,300,300" href="../blueberry" target="_blank" alt="蓝莓" title="蓝莓">
+                        </map>
+                    </div>
+                    <div class="logo-placeholder  divcss5-def" style="top: 45%;left: 45%;">
+                        <img src="{% static "assets/images/2.png" %}" alt="车牌识别" usemap="#newbook2">
+                        <map name="newbook2">
+                            <area shape="rect" coords="0,0,300,300" href="../recplate" target="_blank" alt="车牌识别" title="车牌识别">
+                        </map>
+                    </div>
+                    <div class="logo-placeholder  divcss5-def" style="top: 45%;left: 70%;">
+                        <img src="{% static "assets/images/3.png" %}" alt="shan" usemap="#newbook3">
+                        <map name="newbook3">
+                            <area shape="rect" coords="0,0,300,300" href="../blueberry" target="_blank" alt="蓝莓" title="蓝莓">
+                        </map>
+                    </div>
+            </section>
+         </div>
+    </section>
+
+    <section class="intro" id="site-info">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="animated fadeInDown ">本站包含元素如下</h3>
+          <p class="animated fadeInDown"> 主页以及博客、爬虫、其他功能</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-write intro-section">
+      <div class="container">
+          <div class="section-header">
+                <h3 class="fadeInDown animated">案例介绍</h3>
+                <p class="fadeInDown animated">。。。。。。。。。。</p>
+          </div>
+      </div>
+    </section>
+
+    {% for post in list_demo %}
+    <section id="features" class="content-block data-section nopad content-3-10">
+        <div class="image-container col-sm-6 col-xs-12 pull-left">
+            <div class="background-image-holder" style="background: url('{% static "demo_img/" %}{{post.image_paths}}') no-repeat center center;">
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-6 col-xs-12 content">
+                    <div class="editContent">
+                        <h3>{{post.title}}</h3>
+                    </div>
+                    <div class="editContent">
+                        <p><{{post.description}}</p>
+                        <h5>{{post.Feature_A_title}}</h5>
+                        <p>{{post.Feature_A_data}}</p>
+                        <h5>{{post.Feature_B_title}}</h5>
+                        <p>{{post.Feature_B_data}}</p>
+                        <h5>{{post.Feature_C_title}}</h5>
+                        <p>{{post.Feature_C_data}}</p>
+                    </div>
+                    <a href="../blueberry" class="btn btn-outline btn-outline outline-dark">Our Gallery</a>
+                </div>
+            </div><!-- /.row-->
+        </div><!-- /.container -->
+    </section>
+    {% endfor %}
+
+    <section class="intro-write intro-section">
+      <div class="container">
+          <div class="section-header">
+                <h3 class="fadeInDown animated">案例截图</h3>
+                <p class="fadeInDown animated">。。。。。。。。。。</p>
+          </div>
+      </div>
+    </section>
+
+    {% for post in list_demo_pic %}
+    <section id="gallery" class="gallery">
+      <div class="container-fluid">
+        <div class="section-header">
+                    <h2 class="wow fadeInDown animated">{{ post.title }}</h2>
+                </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6 work"> <a href="{% static "demo_img/" %}{{post.pic_A_imgpath}}" class="work-box"> <img src="{% static "demo_img/" %}{{post.pic_A_imgpath}}" alt="">
+            <div class="overlay">
+              <div class="overlay-caption">
+                 <p><span class="fa fa-hand-pointer-o"></span></p>
+              </div>
+            </div>
+            <!-- overlay -->
+            </a> </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 work"> <a href="{% static "demo_img/" %}{{post.pic_B_imgpath}}" class="work-box"> <img src="{% static "demo_img/" %}{{post.pic_B_imgpath}}" alt="">
+            <div class="overlay">
+              <div class="overlay-caption">
+                <p><span class="fa fa-hand-pointer-o"></span></p>
+              </div>
+            </div>
+            <!-- overlay -->
+            </a> </div>
+        </div>
+      </div>
+    </section>
+    {% endfor %}
+{% endblock %}

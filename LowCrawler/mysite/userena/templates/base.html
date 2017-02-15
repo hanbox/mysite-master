@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <title>{% block title %}Userena{% endblock %}</title>
+  {% block meta %}{% endblock %}
+</head>
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+  <div id="body">
+    {% block body %}
+      <div class="content_title">
+        {% block content_title %}{% endblock %}
+      </div>
+      <div class="content">
+        {% block content %}{% endblock %}
+      </div>
+    {% endblock %}
+  </div>
+
+    {% load staticfiles %}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    {% load staticfiles %}
+    <!-- Custom scroll for sidebars,tables and etc. -->
+    <script src="{% static "assets/plugins/core/slimscroll/jquery.slimscroll.js"%}"></script>
+    <script src="{% static "assets/plugins/misc/highlight/highlight.pack.js" %}"></script>
+
+    <!-- Core plugins ( not remove ever) -->
+    <!-- Handle responsive view functions -->
+    <script src="{% static "assets/js/jRespond.min.js" %}"></script>
+    <!-- Resize text area in most pages -->
+    <script src="{% static "assets/plugins/forms/autosize/jquery.autosize.js"%}"></script>
+    <!-- Proivde quick search for many widgets -->
+    <script src="{% static "assets/plugins/core/quicksearch/jquery.quicksearch.js"%}"></script>
+    <!-- Bootbox confirm dialog for reset postion on panels -->
+    <script src="{% static "assets/plugins/ui/bootbox/bootbox.js"%}"></script>
+    <!-- Other plugins ( load only nessesary plugins for every page) -->
+    <script src="{% static "assets/plugins/forms/icheck/jquery.icheck.js"%}"></script>
+    <script src="{% static "assets/plugins/forms/tags/jquery.tagsinput.min.js"%}"></script>
+    <script src="{% static "assets/plugins/forms/tinymce/tinymce.min.js"%}"></script>
+    <script src="{% static "assets/plugins/forms/validation/jquery.validate.js"%}"></script>
+    <script src="{% static "assets/plugins/misc/countTo/jquery.countTo.js"%}"></script>
+    <script src="{% static "assets/plugins/ui/weather/skyicons.js"%}"></script>
+    <script src="{% static "assets/plugins/ui/notify/jquery.gritter.js"%}"></script>
+    <script src="{% static "assets/plugins/ui/calendar/fullcalendar.js"%}"></script>
+    <script src="{% static "assets/js/jquery.sprFlat.js"%}"></script>
+    <script src="{% static "assets/js/app.js"%}"></script>
+    <script src="{% static "assets/js/pages/dashboard.js"%}"></script>
+    <script src="{% static "assets/plugins/forms/validation/additional-methods.min.js"%}"></script>
+    <script src="{% static "assets/js/pages/login.js"%}"></script>
+</body>
+</html>

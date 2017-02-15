@@ -1,0 +1,3 @@
+{{ object.web_url }}
+{{ object.movie_name }}
+{{ object.movie_date }}

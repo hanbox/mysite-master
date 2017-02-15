@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--static 索引-->
+{% load staticfiles %}
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="my test site!">
+    <meta name="author" content="Hanbox">
+    <link rel="icon" href="{% static "assets/images/favicon.ico" %}">
+    
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="{% static "assets/font-awesome-4.6.3/css/font-awesome.min.css" %}">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+      <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom css -->
+    <link href="{% static "assets/css/style.css" %}" rel='stylesheet' type='text/css' />
+      <link href="{% static "assets/css/animate.css" %}" rel='stylesheet' type='text/css' />
+      <link href="{% static "assets/css/responsive.css" %}" rel='stylesheet' type='text/css' />
+
+    <!-- jplayer js css -->
+    <link href="{% static "jplayer/skin/blue.monday/css/jplayer.blue.monday.css"%}" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="{% static "jplayer/jplayer/jquery.jplayer.js"%}"></script>
+    <script>
+    $(document).ready(function(){
+        $("#jquery_jplayer_1").jPlayer({
+            ready: function (event) {
+                $(this).jPlayer("setMedia", {
+                    title: "The Tale Of Viktor Navorski",
+                    mp3: "{% static "music/李荣浩 - 不将就.mp3" %}",
+<!--                    mp3: "{% static "music/陈奕迅 - 阴天快乐.mp3" %}",-->
+                });
+            },
+            swfPath: "{% static "jplayer/dist/jplayer" %}",
+            supplied: "m4a, oga, mp3",
+            wmode: "window",
+            useStateClassSkin: true,
+            autoBlur: false,
+            smoothPlayBar: true,
+            keyEnabled: true,
+            remainingDuration: true,
+            toggleDuration: true
+        });
+    });
+    </script>
+
+    <title>mySite</title>
+  </head>
+
+  <body>
+        <section class="header">
+            <div class="navbar">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../../index">
+                        <span class="text-logo-element animated fa fa-foursquare" aria-hidden="true"></span><span class="text-logo">For</span><span class="text-slogan">Our</span>
+                    </a>
+                </div>
+                <nav role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <label for="tm"><span class="fa fa-chevron-circle-left" aria-hidden="true"></span></label>
+                        </li>
+                        <li>
+                            <label onclick="requestFullScreen()"><span class="fa fa-arrows-alt" aria-hidden="true"></span></label>
+                        </li>
+                        <li>
+                            <label data-toggle="modal" data-target="#myModal"><span class="fa fa-mobile" aria-hidden="true"></span></label>
+                        </li>
+                    </ul>
+                    <div style="padding:1px; float:right;">
+                        <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                        <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                            <div class="jp-type-single">
+                                <div class="jp-gui jp-interface">
+                                    <div class="jp-controls">
+                                        <button class="jp-play" role="button" tabindex="0">play</button>
+                                        <button class="jp-stop" role="button" tabindex="0">stop</button>
+                                    </div>
+                                    <div class="jp-progress">
+                                        <div class="jp-seek-bar">
+                                            <div class="jp-play-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="jp-volume-controls">
+                                        <button class="jp-mute" role="button" tabindex="0">mute</button>
+                                        <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                                        <div class="jp-volume-bar">
+                                            <div class="jp-volume-bar-value"></div>
+                                        </div>
+                                    </div>
+                                    <div class="jp-time-holder">
+                                        <div class="jp-current-time" role="timer" aria-label="time"></div>
+                                        <div class="jp-duration" role="timer" aria-label="duration"></div>
+                                        <div class="jp-toggles">
+                                            <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="jp-no-solution">
+                                    <span>Update Required</span>
+                                    To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+
+
+        <section id="NavSidebar">
+            <ul id="sideNav" class="nav nav-stacked">
+                <li><a href="../../index">主页<span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                <li><a href="../../blog">Blog<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></li>
+                <li><a href="../../list_movie">电影列表<span class="glyphicon glyphicon-film" aria-hidden="true"></span></a></li>
+                <li><a href="../../admin">后台管理<span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span></a></li>
+                <li><a href="../../tools">网站工具箱<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span></a></li>
+<!--                <li><a href="../../about">关于<span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>-->
+            </ul>
+        </section>
+
+        <!-- Checkbox to toggle the menu -->
+        <input type="checkbox" id="tm" />
+        <section id="content" data-spy="scroll" data-target="#NavSidebar">
+            <div>
+                {% block mysite %}
+                {% endblock %}
+            </div>
+        </section>
+
+<!--        <footer>
+            <div class="footer-links text-center">
+                <p>Copyright © 2016 <a href="../../index">mysite</a><br>
+               Licence | Crafted with <span class="fa fa-heart pulse2"></span> by Hanbox.</p>
+            </div>
+        </footer>-->
+
+        <a href="#0" class="cd-top"><span class="fa fa-chevron-circle-up"></span></a>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">App下载</h4>
+              </div>
+                  <div class="modal-body">
+                    <body>
+                        <div id="code">Android</div>
+                    </body>
+                  </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        {% load staticfiles %}
+        <script src="{% static "assets/js/jquery.qrcode.min.js"%}"></script>
+        <script src="{% static "assets/js/jquery-myui.js"%}"></script>
+  </body>
+</html>	

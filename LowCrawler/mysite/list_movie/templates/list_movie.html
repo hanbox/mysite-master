@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+  {% block mysite %}
+    <section class="content-wrapper">
+        <div class="row">
+            <!-- Start .row -->
+            <!-- Start .page-header -->
+            <div class="heading">
+                <h1 class="page-header"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> 电影列表</h1>
+                <!-- Start .bredcrumb -->
+                <ol class="breadcrumb">
+                    <li><a href="../index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+                    <li>    >    </li>
+                    <li><span class="glyphicon glyphicon-film" aria-hidden="true"></span>电影列表</li>
+                </ol>
+                <!-- End .breadcrumb -->
+            </div>
+            <!-- End .page-header -->
+        </div>
+        <div class="outlet">
+             <!-- Table -->
+            <div class="table-responsive">
+        <table class="table
+                      table-striped     <!--相间变色-->
+                      table-hover       <!--悬停变色-->
+                      table-condensed   <!--紧凑模式-->
+                      " style="table-layout:fixed;word-break:break-all; word-wrap:break-all">
+          <thead>
+            <tr>
+              <th width="3%">序号</th>
+              <th width="8%"></th>
+              <th width="10%">name</th>
+              <th width="5%">date</th>
+              <th width="18%">Detial</th>
+              <th width="30%">Urls</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for post in movie_list.object_list %}
+            <tr>
+                <td>{{post.id}}</td>
+                <td>
+                    <div>
+                        {% load staticfiles %}
+                        <img class="table-image" src="{% static "movie_image/" %}{{post.image_paths}}" alt="" /></a>
+                    </div>
+                </td>
+                <td><h4>{{post.movie_name}}</h4></td>
+                <td><h6>{{post.movie_date}}</h6></td>
+                <td><h5><a href="{{post.web_url}}">{{post.web_url}}<a></h5></td>
+<!--                <td><h5><a href="{{post.movie_url}}">{{post.movie_url}}<a></h5></td>-->
+                <td id={{post.id}}></td>
+                <script>
+                    var str = "{{post.movie_url}}";
+                    var list_str = str.split("&lt;br&gt;");
+                    for ( var i = 0; i < list_str.length; i++ )
+                    {
+                        var strUrl = list_str[i];
+                        if(strUrl != "")
+                        {
+                            var newh5 = document.createElement("h5");
+                            var newa = document.createElement("a");
+                            newa.setAttribute("href", strUrl);
+                            newa.innerHTML = strUrl;
+                            newh5.appendChild(newa);
+
+                            var newtr = document.getElementById("{{post.id}}").appendChild(newh5);
+                        }
+                    }
+                </script>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+            <nav align="center">
+              <ul class="pagination">
+                <li>
+                    {% if movie_list.has_previous %}
+                  <a href="?page={{ movie_list.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                    {% endif %}
+                </li>
+                  {% for page_number in movie_list.paginator.page_range %}
+                    <li><a href="?page={{ page_number }}">{{ page_number }}</a></li>
+                  {% endfor %}
+                <li>
+                    {% if movie_list.has_next %}
+                  <a href="?page={{ movie_list.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                    {% endif %}
+                </li>
+              </ul>
+            </nav>
+        </div>
+    </section>
+  {% endblock %}

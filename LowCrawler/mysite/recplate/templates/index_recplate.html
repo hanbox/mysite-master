@@ -1,0 +1,303 @@
+{% load staticfiles %}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Home</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+<link rel="stylesheet" href="{% static "recplate/css/normalize.min.css"%}">
+<link rel="stylesheet" href="{% static "recplate/css/bootstrap.min.css"%}">
+<link rel="stylesheet" href="{% static "recplate/css/jquery.fancybox.css"%}">
+<link rel="stylesheet" href="{% static "recplate/css/flexslider.css"%}">
+<link rel="stylesheet" href="{% static "recplate/css/styles.css"%}">
+<link rel="stylesheet" href="{% static "recplate/css/queries.css"%}">
+<link rel="stylesheet" href="{% static "recplate/css/etline-font.css"%}">
+<link rel="stylesheet" href="{% static "recplate/bower_components/animate.css/animate.min.css"%}">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body id="top">
+<section class="hero">
+	<section class="navigation">
+		<header>
+			<div class="header-content">
+				<div class="logo"><a href="#"><img src="{% static "recplate/img/sedna-logo.png"%}" alt="Sedna logo"></a></div>
+				<div class="header-nav">
+					<nav>
+						<ul class="primary-nav">
+							<li><a href="#features">功能介绍</a></li>
+							<li><a href="#assets">特点</a></li>
+							<li><a href="#blog">功能截图</a></li>
+							<li><a href="#download">下载</a></li>
+						</ul>
+						<ul class="member-actions">
+							<li><a href="#download" class="login">登录</a></li>
+							<li><a href="#download" class="btn-white btn-small">注册</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="navicon">
+					<a class="nav-toggle" href="#"><span></span></a>
+				</div>
+			</div>
+		</header>
+	</section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="hero-content text-center">
+					<h1>车牌识别：稳定、高效!</h1>
+					<p class="intro">本司自主研发车牌识别软件，使用多种媒介作为作为图像源，稳定可靠。</p>
+					<a href="#" class="btn btn-fill btn-large btn-margin-right">下载</a> <a href="#" class="btn btn-accent btn-large">More.</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="down-arrow floating-arrow"><a href="#"><i class="fa fa-angle-down"></i></a></div>
+</section>
+<section class="intro section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 intro-feature">
+				<div class="intro-icon">
+					<span data-icon="&#xe033;" class="icon"></span>
+				</div>
+				<div class="intro-content">
+					<h5>轻松学习</h5>
+					<p>软件使用简单，并且能自主学习不同样式车牌，操作方式极其简单，功能以及强大.</p>
+				</div>
+			</div>
+			<div class="col-md-4 intro-feature">
+				<div class="intro-icon">
+					<span data-icon="&#xe030;" class="icon"></span>
+				</div>
+				<div class="intro-content">
+					<h5>识别稳定</h5>
+					<p>系统车牌识别准确率能达到%85以上.</p>
+				</div>
+			</div>
+			<div class="col-md-4 intro-feature">
+				<div class="intro-icon">
+					<span data-icon="&#xe046;" class="icon"></span>
+				</div>
+				<div class="intro-content last">
+					<h5>可供开发</h5>
+					<p>软件提供核心算法SDK，用户可随意定制。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="features section-padding" id="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 col-md-offset-7">
+				<div class="feature-list">
+					<h3>稳定可靠的识别车牌</h3>
+					<p>通过高速摄像系统，能够高速稳定的识别出车牌号码.</p>
+					<ul class="features-stack">
+						<li class="feature-item">
+							<div class="feature-icon">
+								<span data-icon="&#xe03e;" class="icon"></span>
+							</div>
+							<div class="feature-content">
+								<h5>可设置识别参数阈值</h5>
+								<p>若系统遇到特殊情况，例如角度等问题，可以调校识别参数，提高识别率.</p>
+							</div>
+						</li>
+						<li class="feature-item">
+							<div class="feature-icon">
+								<span data-icon="&#xe040;" class="icon"></span>
+							</div>
+							<div class="feature-content">
+								<h5>可使用多套监控系统</h5>
+								<p>软件中可同时使用多套监控系统进行同时监控.</p>
+							</div>
+						</li>
+						<li class="feature-item">
+							<div class="feature-icon">
+								<span data-icon="&#xe03c;" class="icon"></span>
+							</div>
+							<div class="feature-content">
+								<h5>可进行识别过程记录</h5>
+								<p>软件可进行识别过程记录，包括识别后结果以及识别率计算.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="device-showcase">
+		<div class="devices">
+			<div class="ipad-wrap wp1"></div>
+		</div>
+	</div>
+	<div class="responsive-feature-img"><img src="{% static "recplate/img/devices.png"%}" alt="responsive devices"></div>
+</section>
+<section class="features-extra section-padding" id="assets">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="feature-list">
+					<h3>识别核心可定制学习!</h3>
+					<p>识别系统可使用神经网络学习的方式，训练识别核心，让其识别可以识别不同种类车牌系统。 </p>
+					<p>并且提供开发sdk,用户可随意定制.
+					</p>
+					<a href="#" class="btn btn-ghost btn-accent btn-small">神经网络学习</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="macbook-wrap wp3"></div>
+	<div class="responsive-feature-img"><img src="{% static "recplate/img/macbook-pro.png"%}" alt="responsive devices"></div>
+</section>
+<section class="hero-strip section-padding">
+	<div class="container">
+		<div class="col-md-12 text-center">
+			<h2>
+			车牌识别系统提供SDK
+			</h2>
+			<p>具体使用请参考使用说明.</p>
+			<a href="#" class="btn btn-ghost btn-accent btn-large">Download now!</a>
+			<div class="logo-placeholder floating-logo"><img src="{% static "recplate/img/sketch-logo.png"%}" alt="Sketch Logo"></div>
+		</div>
+	</div>
+</section>
+<section class="blog-intro section-padding" id="blog">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>车牌识别系统局部截图</h3>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="blog text-center">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+				<article class="blog-post">
+					<figure>
+						<a href="{% static "recplate/img/blog-img-01.jpg"%}" class="single_image">
+							<div class="blog-img-wrap">
+								<div class="overlay">
+									<i class="fa fa-search"></i>
+								</div>
+								<img src="{% static "recplate/img/blog-img-01.jpg"%}" alt="Sedna blog image"/>
+							</div>
+						</a>
+						<figcaption>
+						<h2><a href="#" class="blog-category" data-toggle="tooltip" data-placement="top" data-original-title="See more posts">车牌识别</a></h2>
+						<p><a href="#" class="blog-post-title">使用说明 <i class="fa fa-angle-right"></i></a></p>
+						</figcaption>
+					</figure>
+				</article>
+			</div>
+			<div class="col-md-4">
+				<article class="blog-post">
+					<figure>
+						<a href="{% static "recplate/img/blog-img-02.jpg"%}" class="single_image">
+							<div class="blog-img-wrap">
+								<div class="overlay">
+									<i class="fa fa-search"></i>
+								</div>
+								<img src="{% static "recplate/img/blog-img-02.jpg"%}" alt="Sedna blog image"/>
+							</div>
+						</a>
+						<figcaption>
+						<h2><a href="#" class="blog-category" data-toggle="tooltip" data-placement="top" data-original-title="See more posts">识别过程</a></h2>
+						<p><a href="#" class="blog-post-title">使用说明 <i class="fa fa-angle-right"></i></a></p>
+						</figcaption>
+					</figure>
+				</article>
+			</div>
+			<div class="col-md-4">
+				<article class="blog-post">
+					<figure>
+						<a href="{% static "recplate/img/blog-img-03.jpg"%}" class="single_image">
+							<div class="blog-img-wrap">
+								<div class="overlay">
+									<i class="fa fa-search"></i>
+								</div>
+								<img src="{% static "recplate/img/blog-img-03.jpg"%}" class="single_image" alt="Sedna blog image"/>
+							</div>
+						</a>
+						<figcaption>
+						<h2><a href="#" class="blog-category" data-toggle="tooltip" data-placement="top" data-original-title="See more posts">神经网络学习配置</a></h2>
+						<p><a href="#" class="blog-post-title">使用说明 <i class="fa fa-angle-right"></i></a></p>
+						</figcaption>
+					</figure>
+				</article>
+			</div>
+			<a href="#" class="btn btn-ghost btn-accent btn-small">更多</a>
+		</div>
+	</div>
+</section>
+<section class="sign-up section-padding text-center" id="download">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>注册用户，了解更多信息</h3>
+				<form class="signup-form" action="#" method="POST" role="form">
+					<div class="form-input-group">
+						<i class="fa fa-envelope"></i><input type="text" class="" placeholder="填写Email" required>
+					</div>
+					<div class="form-input-group">
+						<i class="fa fa-lock"></i><input type="text" class="" placeholder="填写password" required>
+					</div>
+					<button type="submit" class="btn-fill sign-up-btn">注册</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="to-top">
+	<div class="container">
+		<div class="row">
+			<div class="to-top-wrap">
+				<a href="#top" class="top"><i class="fa fa-angle-up"></i></a>
+			</div>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="footer-links">
+					<ul class="footer-group">
+						<li><a href="#">功能介绍</a></li>
+						<li><a href="#">注册</a></li>
+						<li><a href="#">特点</a></li>
+					</ul>
+					<p>Copyright © 2016 <a href="#">车牌识别软件</a><br>
+					<a href="#">Licence</a> | Crafted with <span class="fa fa-heart pulse2"></span> by <a href="#">Liu</a>.</p>
+				</div>
+			</div>
+			<div class="social-share">
+				<p>Share Sedna with your friends</p>
+				<a href="#" class="twitter-share"><i class="fa fa-twitter"></i></a> <a href="#" class="facebook-share"><i class="fa fa-facebook"></i></a>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="{% static "recplate/js/vendor/jquery-1.11.2.min.js"%}"></script>
+<script src="{% static "recplate/bower_components/retina.js/dist/retina.js"%}"></script>
+<script src="{% static "recplate/js/jquery.fancybox.pack.js"%}"></script>
+<script src="{% static "recplate/js/vendor/bootstrap.min.js"%}"></script>
+<script src="{% static "recplate/js/scripts.js"%}"></script>
+<script src="{% static "recplate/js/jquery.flexslider-min.js"%}"></script>
+<script src="{% static "recplate/bower_components/classie/classie.js"%}"></script>
+<script src="{% static "recplate/bower_components/jquery-waypoints/lib/jquery.waypoints.min.js"%}"></script>
+</body>
+</html>
